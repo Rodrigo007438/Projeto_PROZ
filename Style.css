@@ -158,7 +158,7 @@ tbody tr:hover {
     background-color: #eaf2f8;
 }
 
-.menu ul{
+.navbar{
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
@@ -167,29 +167,39 @@ tbody tr:hover {
     display: flex;
     padding: 15px 20px;
     margin-bottom: 100;
-    text-align: center;
-    justify-content: center;
-    list-style-type: none;
-    text-decoration: None;
+    align-items: center;
     color: #2c3e50;
     background-color: #bcccdc;
     z-index: 1000;
 }
 
+
+.menu{
+    display: flex;
+    list-style-type: none;
+    text-decoration: none;
+}
+
 .menu li a{
+    font-family: Arial, sans-serif;
+    font-weight: bold;
     padding: 15px 30px;
     color: #2c3e50;
     text-decoration: none;
 }
 
-.menu ul li :hover{
+.menu li :hover{
     padding: 15px 30px;
-
+    
     opacity: 50%;
-    color: #000000;
+    color: #01002e;
 }
 
 .conteudo{
     margin-top: 4%;
     padding: 20px;
+}
+
+.logo img{
+    max-height: 50px;
 }
