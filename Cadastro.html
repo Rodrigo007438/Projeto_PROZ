@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" sizes="32x32" href="https://www.nicepng.com/png/full/204-2049937_logo-de-farmacia-png.png"/>
+    <link rel="icon" type="image/x-icon" sizes="32x32"
+        href="https://www.nicepng.com/png/full/204-2049937_logo-de-farmacia-png.png" />
     <title> Controle de Estoque </title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}" <body>
 
-    <div class="conteudo">
+    <div class=" conteudo">
 
         <header class="navbar">
 
             <div class="logo">
-                <a href="Index.html"><img src="https://www.nicepng.com/png/full/204-2049937_logo-de-farmacia-png.png" alt="logo"/></a>
+                <a href="{{url_for('main.index') }}"><img
+                        src="https://www.nicepng.com/png/full/204-2049937_logo-de-farmacia-png.png" alt="logo" /></a>
             </div>
 
             <ul class="menu">
 
-                <li><a href="Index.html">Pagina Inicial</a></li>
-                <li><a href="Estoque.html">Estoque</a></li>
-                
+                <li><a href="{{url_for('main.index') }}">Pagina Inicial</a></li>
+                <li><a href="{{url_for('main.estoque') }}">Estoque</a></li>
+
             </ul>
         </header>
 
@@ -29,7 +30,7 @@
             <h1> Controle de Estoque </h1>
             <p class="descricao">Cadastre produtos e acompanhe a quantidade disponível.</p>
 
-            <form>
+            <form action="{{url_for('main.salvar_produto')}}" method="post">
                 <div class="grupo-form">
                     <label for="nome">Nome do produto</label>
                     <input type="text" id="nome" name="nome" placeholder="Digite o nome do produto">
@@ -43,7 +44,8 @@
 
                     <div class="grupo-form">
                         <label for="quantidade">Quantidade</label>
-                        <input type="number" id="quantidade" name="quantidade" min="0" placeholder="Digite a quantidade">
+                        <input type="number" id="quantidade" name="quantidade" min="0"
+                            placeholder="Digite a quantidade">
                     </div>
                 </div>
 
@@ -58,8 +60,9 @@
                 </div>
             </form>
 
-            
+
         </div>
-    </div>    
-</body>
+    </div>
+    </body>
+
 </html>

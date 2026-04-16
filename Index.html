@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" sizes="32x32" href="https://www.nicepng.com/png/full/204-2049937_logo-de-farmacia-png.png"/>
+    <link rel="icon" type="image/x-icon" sizes="32x32"
+        href="https://www.nicepng.com/png/full/204-2049937_logo-de-farmacia-png.png" />
     <title> Controle de Estoque </title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
 </head>
 
 <body>
@@ -13,13 +15,14 @@
         <header class="navbar">
 
             <div class="logo">
-                <a href="Index.html"><img src="https://www.nicepng.com/png/full/204-2049937_logo-de-farmacia-png.png" alt="logo"/></a>
+                <a href="{{url_for('main.index') }}"><img src="https://www.nicepng.com/png/full/204-2049937_logo-de-farmacia-png.png"
+                        alt="logo" /></a>
             </div>
 
             <ul class="menu">
 
-                <li><a href="Estoque.html">Estoque</a></li>
-                <li><a href="Cadastro.html">Cadastro</a></li>
+                <li><a href="{{url_for('main.estoque') }}">Estoque</a></li>
+                <li><a href="{{url_for('main.cadastro') }}">Cadastro</a></li>
 
             </ul>
         </header>
@@ -28,13 +31,17 @@
         <h2>Um pouco sobre nós</h2>
 
         <div class="container">
-    
-        <p class="descricao"> Um lugar onde você pode encontra os melhores medicamentos, no melhor preço.
-        Estamos em Juiz de Fora desde o ano 398,<br/> nossa farmacia foi criado pelos nativos, antes de ser dizimada pelo colonizadores.<br/> 
-        Depois nos reestruturamos e continuamos a vender nossos remédios, mas nossa farmaceutica foi queimada na fogueira...<br/> 
-        Um dia triste, mas assim como a fogueira, nossos preços estão pegando fogo, venha conferir!</p>
-            <img src="https://tokdehistoria.com.br/wp-content/uploads/2025/02/apotekerhjorten-1.jpg?w=800" alt="imagem farmacia antiga"/>
+
+            <p class="descricao"> Um lugar onde você pode encontra os melhores medicamentos, no melhor preço.
+                Estamos em Juiz de Fora desde o ano 398,<br /> nossa farmacia foi criado pelos nativos, antes de ser
+                dizimada pelo colonizadores.<br />
+                Depois nos reestruturamos e continuamos a vender nossos remédios, mas nossa farmaceutica foi queimada na
+                fogueira...<br />
+                Um dia triste, mas assim como a fogueira, nossos preços estão pegando fogo, venha conferir!</p>
+            <img src="https://tokdehistoria.com.br/wp-content/uploads/2025/02/apotekerhjorten-1.jpg?w=800"
+                alt="imagem farmacia antiga" />
         </div>
-    </div>    
+    </div>
 </body>
+
 </html>

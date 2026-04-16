@@ -1,76 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" sizes="32x32" href="https://www.nicepng.com/png/full/204-2049937_logo-de-farmacia-png.png"/>
+    <link rel="icon" type="image/x-icon" sizes="32x32"
+        href="https://www.nicepng.com/png/full/204-2049937_logo-de-farmacia-png.png" />
     <title> Controle de Estoque </title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
 </head>
 
-    <div class="conteudo">
-        <header class="navbar">
+<div class="conteudo">
+    <header class="navbar">
 
-            <div class="logo">
-                <a href="Index.html"><img src="https://www.nicepng.com/png/full/204-2049937_logo-de-farmacia-png.png" alt="logo"/></a>
-            </div>
-
-            <ul class="menu">
-
-                <li><a href="Index.html">Pagina Inicial</a></li>
-                <li><a href="Cadastro.html">Cadastro</a></li>
-
-            </ul>
-        </header>
-        <div class="container">
-            <section class="resumo">
-                    <h2>Resumo do Estoque</h2>
-                    <p><strong>Total de produtos cadastrados:</strong> ____</p>
-                    <p><strong>Valor total em estoque:</strong> R$ ____</p>
-                </section>
-
-                <section class="lista-produtos">
-                    <h2>Produtos Cadastrados</h2>
-
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Nome</th>
-                                <th>Código Anvisa</th>
-                                <th>Embalagem</th>
-                                <th>Quantidade</th>
-                                <th>Preço</th>
-                                <th>Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>CLOREXIDINA, DIGLUCONATO A 0,2%</td>
-                                <td>158648795</td>
-                                <td>Unitário</td>
-                                <td>10</td>
-                                <td>R$ 80,00</td>
-                                <td>R$ 800,00</td>
-                            </tr>
-                            <tr>
-                                <td>ISOSSORBIDA, MONONITRATO 40MG</td>
-                                <td>154879586</td>
-                                <td>Caixa/40</td>
-                                <td>10</td>
-                                <td>R$ 90,00</td>
-                                <td>R$ 900,00</td>
-                            </tr>
-                            <tr>
-                                <td>METRONIDAZOL 250MG</td>
-                                <td>154862548</td>
-                                <td>Unitário</td>
-                                <td>20</td>
-                                <td>R$ 80,00</td>
-                                <td>R$ 1600,00</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </section>
+        <div class="logo">
+            <a href="{{url_for('main.index') }}"><img
+                    src="https://www.nicepng.com/png/full/204-2049937_logo-de-farmacia-png.png" alt="logo" /></a>
         </div>
+
+        <ul class="menu">
+
+            <li><a href="{{url_for('main.index') }}">Pagina Inicial</a></li>
+            <li><a href="{{url_for('main.cadastro') }}">Cadastro</a></li>
+
+        </ul>
+    </header>
+    <div class="container">
+        <section class="resumo">
+            <h2>Resumo do Estoque</h2>
+            <p><strong>Total de produtos cadastrados:</strong> {{total_quant}}</p>
+            <p><strong>Valor total em estoque:</strong> R$ {{total_real}}</p>
+        </section>
+
+        <section class="lista-produtos">
+            <h2>Produtos Cadastrados</h2>
+
+            <table>
+                <tbody>
+                    {% for produtos in produtos %}
+                    <tr>
+                        <td>{{produtos.nome}}</td>
+                        <td>{{produtos.codigo}}</td>
+                        <td>{{produtos.embalagem}}</td>
+                        <td>{{produtos.quantidade}}</td>
+                        <td>{{produtos.preco_un}}</td>
+                        <td>{{produtos.preco_total}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
     </div>
+</div>
+
 </html>
